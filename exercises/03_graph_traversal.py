@@ -9,8 +9,8 @@ graph.parse(data_dir / "first_intro.xml", publicID="EQ")
 
 query = """
 SELECT * WHERE {
-    ?load cim:IdentifiedObject.name 'Load-1' .
-    ?terminal cim:Terminal.ConductingEquipment ?load
+    ?terminal cim:IdentifiedObject.name 'Terminal-L1' .
+    ?terminal cim:Terminal.ConductingEquipment ?cond_equip
 }
 """
 
