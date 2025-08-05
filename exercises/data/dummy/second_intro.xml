@@ -14,4 +14,8 @@
     <cim:EnergyConsumer rdf:ID="_334e4a67-6496-47a1-b623-d306f83f3bbf">
         <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
     </cim:EnergyConsumer>
+
+    <cim:EnergyConsumer rdf:ID="_23ae2158-6481-96c2-57df-3572f7313bc0">
+        <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
+    </cim:EnergyConsumer>
 </rdf:RDF>
