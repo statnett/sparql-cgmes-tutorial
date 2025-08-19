@@ -1,0 +1,13 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+src/sparql_intro/data/micro/
+docs/HTML/*
+
+# Virtual environments
+.venv
+_ignore*

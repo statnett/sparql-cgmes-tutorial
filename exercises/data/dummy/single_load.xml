@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <cim:GeographicalRegion rdf:ID="_8cbf2835-ad43-49f5-ae28-49eac0f7b1ba">
+        <cim:IdentifiedObject.name>PlanetMars</cim:IdentifiedObject.name>
+    </cim:GeographicalRegion>
+    
+    <cim:SubGeographicalRegion rdf:ID="_50dc5fd7-977c-4d83-8e07-e1a079674266">
+        <cim:IdentifiedObject.name>NorthPole</cim:IdentifiedObject.name>
+        <cim:SubGeographicalRegion.Region rdf:resource="#_8cbf2835-ad43-49f5-ae28-49eac0f7b1ba"/>
+    </cim:SubGeographicalRegion>
+
+    <cim:Substation rdf:ID="_474b45fd-e938-46fd-9852-b588ea017732">
+        <cim:IdentifiedObject.name>SubStation1</cim:IdentifiedObject.name>
+        <cim:Substation.Region rdf:resource="#_50dc5fd7-977c-4d83-8e07-e1a079674266"/>
+    </cim:Substation>
+    
+    <cim:BaseVoltage rdf:ID="_3eac163c-1b58-4b49-a8c2-02dd5ab7ec6a">
+        <cim:BaseVoltage.nominalVoltage>15.75</cim:BaseVoltage.nominalVoltage>
+        <cim:IdentifiedObject.name>15.75 kV</cim:IdentifiedObject.name>
+    </cim:BaseVoltage>
+    
+    <cim:VoltageLevel rdf:ID="_705e0aca-674d-47e6-b550-d9f6afecdb25">
+        <cim:IdentifiedObject.name>15.8</cim:IdentifiedObject.name>
+        <cim:VoltageLevel.Substation rdf:resource="#_474b45fd-e938-46fd-9852-b588ea017732"/>
+        <cim:VoltageLevel.BaseVoltage rdf:resource="#_3eac163c-1b58-4b49-a8c2-02dd5ab7ec6a"/>
+    </cim:VoltageLevel>
+
+    <cim:ConnectivityNode rdf:ID="_196965ea-27ad-4566-a7ee-429856557aef">
+        <cim:IdentifiedObject.name>CN-1</cim:IdentifiedObject.name>
+        <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_705e0aca-674d-47e6-b550-d9f6afecdb25"/>
+    </cim:ConnectivityNode>
+
+    <cim:Terminal rdf:ID="_bce40a7a-3ab9-40df-8a25-bbd944a7d794">
+        <cim:IdentifiedObject.name>Terminal-L1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_334e4a67-6496-47a1-b623-d306f83f3bbf"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_196965ea-27ad-4566-a7ee-429856557aef"/>
+    </cim:Terminal>
+    
+    <cim:EnergyConsumer rdf:ID="_334e4a67-6496-47a1-b623-d306f83f3bbf">
+        <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
+    </cim:EnergyConsumer>
+</rdf:RDF>

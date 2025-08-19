@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <cim:GeographicalRegion rdf:ID="_7cee3d5a-9bb4-48b5-a5d0-a5ea4fc4ea6b">
+        <cim:IdentifiedObject.name>PlanetMars</cim:IdentifiedObject.name>
+    </cim:GeographicalRegion>
+    
+    <cim:SubGeographicalRegion rdf:ID="_13add68e-5768-4985-8aae-6d1ad8d292a7">
+        <cim:IdentifiedObject.name>NorthPole</cim:IdentifiedObject.name>
+        <cim:SubGeographicalRegion.Region rdf:resource="#_152b95ec-b986-4bad-a5e2-5a340d006ddb"/>
+    </cim:SubGeographicalRegion>
+
+    <cim:Substation rdf:ID="_c49942d6-8b01-4b01-b5e8-f1180f84906c">
+        <cim:IdentifiedObject.name>SubStation1</cim:IdentifiedObject.name>
+        <cim:Substation.Region rdf:resource="#_13add68e-5768-4985-8aae-6d1ad8d292a7"/>
+    </cim:Substation>
+    
+    <cim:BaseVoltage rdf:ID="_f04f8c05-d7d5-4030-8738-3e6ec58075c1">
+        <cim:BaseVoltage.nominalVoltage>15.75</cim:BaseVoltage.nominalVoltage>
+        <cim:IdentifiedObject.name>15.75 kV</cim:IdentifiedObject.name>
+    </cim:BaseVoltage>
+    
+    <cim:VoltageLevel rdf:ID="_bb57895b-a7d8-40f2-aa34-58582a3f2dff">
+        <cim:IdentifiedObject.name>15.8</cim:IdentifiedObject.name>
+        <cim:VoltageLevel.Substation rdf:resource="#_c49942d6-8b01-4b01-b5e8-f1180f84906c"/>
+        <cim:VoltageLevel.BaseVoltage rdf:resource="#_f04f8c05-d7d5-4030-8738-3e6ec58075c1"/>
+    </cim:VoltageLevel>
+
+    <cim:ConnectivityNode rdf:ID="_876c6bf8-1009-4e81-b071-78c4dbcd7c77">
+        <cim:IdentifiedObject.name>CN-1</cim:IdentifiedObject.name>
+        <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_bb57895b-a7d8-40f2-aa34-58582a3f2dff"/>
+    </cim:ConnectivityNode>
+
+    <cim:Terminal rdf:ID="_b2bc8605-5bf7-4c8a-8dba-f5a67e8d6769">
+        <cim:IdentifiedObject.name>Terminal-G1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_152b95ec-b986-4bad-a5e2-5a340d006ddb"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_876c6bf8-1009-4e81-b071-78c4dbcd7c77"/>
+    </cim:Terminal>
+
+    <cim:SynchronousMachine rdf:ID="_152b95ec-b986-4bad-a5e2-5a340d006ddb">
+        <cim:IdentifiedObject.name>SynchronousMachine-G1</cim:IdentifiedObject.name>
+        <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_b850063d-eae7-4675-bc98-4642d3076783"/>
+        <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator"/>
+        <cim:SynchronousMachine.satDirectSubtransX>0.200000</cim:SynchronousMachine.satDirectSubtransX>
+        <cim:SynchronousMachine.r0>0e+000</cim:SynchronousMachine.r0>
+        <cim:SynchronousMachine.r2>0e+000</cim:SynchronousMachine.r2>
+        <cim:SynchronousMachine.x0>0.130000</cim:SynchronousMachine.x0>
+        <cim:SynchronousMachine.x2>0.170000</cim:SynchronousMachine.x2>
+        <cim:SynchronousMachine.r>0e+000</cim:SynchronousMachine.r>
+        <cim:SynchronousMachine.earthing>true</cim:SynchronousMachine.earthing>
+    </cim:SynchronousMachine>
+
+    <cim:GeneratingUnit rdf:ID="_b850063d-eae7-4675-bc98-4642d3076783">
+        <cim:IdentifiedObject.name>Gen-1</cim:IdentifiedObject.name>
+        <cim:GeneratingUnit.initialP>150.000000</cim:GeneratingUnit.initialP>
+        <cim:GeneratingUnit.maxOperatingP>250.000000</cim:GeneratingUnit.maxOperatingP>
+        <cim:GeneratingUnit.minOperatingP>130.000000</cim:GeneratingUnit.minOperatingP>
+    </cim:GeneratingUnit>
+</rdf:RDF>

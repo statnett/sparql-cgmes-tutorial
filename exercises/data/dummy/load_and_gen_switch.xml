@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <cim:GeographicalRegion rdf:ID="_8cbf2835-ad43-49f5-ae28-49eac0f7b1ba">
+        <cim:IdentifiedObject.name>PlanetMars</cim:IdentifiedObject.name>
+    </cim:GeographicalRegion>
+    
+    <cim:SubGeographicalRegion rdf:ID="_50dc5fd7-977c-4d83-8e07-e1a079674266">
+        <cim:IdentifiedObject.name>NorthPole.</cim:IdentifiedObject.name>
+        <cim:SubGeographicalRegion.Region rdf:resource="#_8cbf2835-ad43-49f5-ae28-49eac0f7b1ba"/>
+    </cim:SubGeographicalRegion>
+
+    <cim:Substation rdf:ID="_474b45fd-e938-46fd-9852-b588ea017732">
+        <cim:IdentifiedObject.name>SubStation1</cim:IdentifiedObject.name>
+        <cim:Substation.Region rdf:resource="#_50dc5fd7-977c-4d83-8e07-e1a079674266"/>
+    </cim:Substation>
+    
+    <cim:BaseVoltage rdf:ID="_3eac163c-1b58-4b49-a8c2-02dd5ab7ec6a">
+        <cim:BaseVoltage.nominalVoltage>15.75</cim:BaseVoltage.nominalVoltage>
+        <cim:IdentifiedObject.name>15.75 kV</cim:IdentifiedObject.name>
+    </cim:BaseVoltage>
+    
+    <cim:VoltageLevel rdf:ID="_705e0aca-674d-47e6-b550-d9f6afecdb25">
+        <cim:IdentifiedObject.name>15.8</cim:IdentifiedObject.name>
+        <cim:VoltageLevel.Substation rdf:resource="#_474b45fd-e938-46fd-9852-b588ea017732"/>
+        <cim:VoltageLevel.BaseVoltage rdf:resource="#_3eac163c-1b58-4b49-a8c2-02dd5ab7ec6a"/>
+    </cim:VoltageLevel>
+
+    <!-- Generator -->
+    <cim:ConnectivityNode rdf:ID="_1dad894f-58cd-4f87-b92c-3cd2ef833f98">
+        <cim:IdentifiedObject.name>CN-1</cim:IdentifiedObject.name>
+        <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_705e0aca-674d-47e6-b550-d9f6afecdb25"/>
+    </cim:ConnectivityNode>
+
+    <cim:Terminal rdf:ID="_8eaab9d8-bce6-45aa-be9c-fe64e54626e8">
+        <cim:IdentifiedObject.name>Terminal-G1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_365f0651-fa42-418f-af2b-d5591074e2c3"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_1dad894f-58cd-4f87-b92c-3cd2ef833f98"/>
+    </cim:Terminal>
+
+    <cim:SynchronousMachine rdf:ID="_365f0651-fa42-418f-af2b-d5591074e2c3">
+        <cim:IdentifiedObject.name>SynchronousMachine-G1</cim:IdentifiedObject.name>
+        <cim:SynchronousMachine.GeneratingUnit rdf:resource="#_49fdde99-1d3d-4cd7-8554-c5db3febd764"/>
+        <cim:SynchronousMachine.type rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator"/>
+        <cim:SynchronousMachine.satDirectSubtransX>0.200000</cim:SynchronousMachine.satDirectSubtransX>
+        <cim:SynchronousMachine.r0>0e+000</cim:SynchronousMachine.r0>
+        <cim:SynchronousMachine.r2>0e+000</cim:SynchronousMachine.r2>
+        <cim:SynchronousMachine.x0>0.130000</cim:SynchronousMachine.x0>
+        <cim:SynchronousMachine.x2>0.170000</cim:SynchronousMachine.x2>
+        <cim:SynchronousMachine.r>0e+000</cim:SynchronousMachine.r>
+        <cim:SynchronousMachine.earthing>true</cim:SynchronousMachine.earthing>
+    </cim:SynchronousMachine>
+
+    <cim:GeneratingUnit rdf:ID="_49fdde99-1d3d-4cd7-8554-c5db3febd764">
+        <cim:IdentifiedObject.name>Gen-1</cim:IdentifiedObject.name>
+        <cim:GeneratingUnit.initialP>150.000000</cim:GeneratingUnit.initialP>
+        <cim:GeneratingUnit.maxOperatingP>250.000000</cim:GeneratingUnit.maxOperatingP>
+        <cim:GeneratingUnit.minOperatingP>130.000000</cim:GeneratingUnit.minOperatingP>
+    </cim:GeneratingUnit>
+
+    <!-- Load -->
+    <cim:ConnectivityNode rdf:ID="_196965ea-27ad-4566-a7ee-429856557aef">
+        <cim:IdentifiedObject.name>CN-2</cim:IdentifiedObject.name>
+        <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_705e0aca-674d-47e6-b550-d9f6afecdb25"/>
+    </cim:ConnectivityNode>
+
+    <cim:Terminal rdf:ID="_bce40a7a-3ab9-40df-8a25-bbd944a7d794">
+        <cim:IdentifiedObject.name>Terminal-L1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_334e4a67-6496-47a1-b623-d306f83f3bbf"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_196965ea-27ad-4566-a7ee-429856557aef"/>
+    </cim:Terminal>
+    
+    <cim:EnergyConsumer rdf:ID="_334e4a67-6496-47a1-b623-d306f83f3bbf">
+        <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
+    </cim:EnergyConsumer>
+
+    <!-- Switch -->
+    <cim:Terminal rdf:ID="_eabecbc8-b29f-4fcb-a6ce-bdc36c2d40fe">
+        <cim:IdentifiedObject.name>Terminal-S1-G1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_17f15493-a544-4382-827a-bb72344e599e"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_1dad894f-58cd-4f87-b92c-3cd2ef833f98"/>
+    </cim:Terminal>
+
+    <cim:Terminal rdf:ID="_4528fda8-b228-4de2-8faf-2f675ff18934">
+        <cim:IdentifiedObject.name>Terminal-S1-L1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_17f15493-a544-4382-827a-bb72344e599e"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_196965ea-27ad-4566-a7ee-429856557aef"/>
+    </cim:Terminal>
+
+    <cim:Switch rdf:ID="_17f15493-a544-4382-827a-bb72344e599e">
+        <cim:IdentifiedObject.name>Switch</cim:IdentifiedObject.name>
+        <cim:Switch.normalOpen>false</cim:Switch.normalOpen>
+        <cim:Switch.retained>false</cim:Switch.retained>
+    </cim:Switch>
+</rdf:RDF>

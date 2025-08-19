@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#" xmlns:entsoe="http://entsoe.eu/CIM/SchemaExtension/3/1#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <cim:ConnectivityNode rdf:ID="_196965ea-27ad-4566-a7ee-429856557aef">
+        <cim:IdentifiedObject.name>CN-1</cim:IdentifiedObject.name>
+        <cim:ConnectivityNode.ConnectivityNodeContainer rdf:resource="#_705e0aca-674d-47e6-b550-d9f6afecdb25"/>
+    </cim:ConnectivityNode>
+    
+    <cim:Terminal rdf:ID="_bce40a7a-3ab9-40df-8a25-bbd944a7d794">
+        <cim:IdentifiedObject.name>Terminal-L1</cim:IdentifiedObject.name>
+        <cim:Terminal.ConductingEquipment rdf:resource="#_334e4a67-6496-47a1-b623-d306f83f3bbf"/>
+        <cim:Terminal.ConnectivityNode rdf:resource="#_196965ea-27ad-4566-a7ee-429856557aef"/>
+    </cim:Terminal>
+    
+    <cim:EnergyConsumer rdf:ID="_334e4a67-6496-47a1-b623-d306f83f3bbf">
+        <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
+    </cim:EnergyConsumer>
+
+    <cim:EnergyConsumer rdf:ID="_23ae2158-6481-96c2-57df-3572f7313bc0">
+        <cim:IdentifiedObject.name>Load-1</cim:IdentifiedObject.name>
+    </cim:EnergyConsumer>
+</rdf:RDF>
