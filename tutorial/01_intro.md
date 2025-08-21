@@ -147,4 +147,4 @@ Moreover, you may also have realised that literals are stored as the content of 
 
 ## Next up
 You should now understand that RDF-data is structured in triples, and that these triples commonly are represented using XML.
-Next up, we'll look at how SPARQL can be used to do other things than just filter the triples: [link](./02_more_sparql.md)
+Next up, we'll look at how SPARQL can be used to do other things than just filter the triples: [link](./02_sparql_joins.md)

@@ -37,3 +37,29 @@ SELECT * WHERE {
 
 This will return all possible combinations of triples and for each triple, it will find all possible combinations of triples again.
 Such queries form "cartesian products", and it can be easy to accidentally create one (for example, if we have a typo).
+
+
+## Exercises
+
+1. Modify the query in [exercises/02_sparql_joins.py](../exercises/02_sparql_joins.py) so it says
+```sparql
+SELECT * WHERE {
+    ?p rdf:type cim:EnergyConsumer
+}
+run the query and inspect the output. What do you think this query does?
+2. Open the [`exercises/data/dummy/first_intro.xml`](../exercises/data/dummy/first_intro.xml) file, do you see what the `cim:EnergyConsumer` refers to?
+2. Modify the query so it finds `cim:ConnectivityNode`-objects instead
+3. Modify the file so it queries the [`exercises/data/dummy/load_and_gen_switch.xml`](../exercises/data/dummy/load_and_gen_switch.xml) file instead. Do you see how this `rdf:type`-predicate can be useful?
+4. Modify the file again, replacing `rdf:type` with `a` (just the letter). Run the code again. Did anything change?
+```
+
+## Reflection
+
+You have now seen a very useful SPARQL feature: the `rdf:type`-predicate, which you can also find with the `a`-alias.
+You may remember from the previous section that there were some extra triples that we ignored.
+These triples come from the tag-type of the predicates in the XML-file and contain type information for our objects.
+By using the `rdf:type`-predicate, we can extract all nodes of a given type, making it possible to craft queries that e.g. returns the voltage level for each transformer end.
+
+
+## Next up
+Now that you are aware of how to join simple SPARQL queries, you are ready to see how SPARQL queries can be interpreted as defining a graph traversal: [link](./03_graph_traversal.md)

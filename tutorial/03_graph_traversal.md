@@ -116,3 +116,7 @@ Below, we see a figure that illustrates how this graph traversal is conducted.
 We start in the `'Terminal-L1'`-vertex and follow the path in green to end up at the `'CN-1'`-vertex, which is stored in the `?cn_name`-variable.
 
 ![Network diagram displaying the graph Terminal-L1 <-- cim:IdentifiedObject.name -- _bce40a7a-3ab9-40df-8a25-bbd944a7d794 -- cim:Terminal.ConductingEquipment -- > _334e4a67-6496-47a1-b623-d306f83f3bbf -- cim:IdentifiedObject.name --> Load-1; _bce40a7a-3ab9-40df-8a25-bbd944a7d794 -- cim:Terminal.ConnectivityNode -- > _196965ea-27ad-4566-a7ee-429856557aef --> cim:IdentifiedObject.name --> CN-1. The path Terminal-L1 -- ^cim:IdentifiedObject.name --> _bce40a7a-3ab9-40df-8a25-bbd944a7d794 -- cim:Terminal.ConnectivityNode -> _196965ea-27ad-4566-a7ee-429856557aef --> cim:IdentifiedObject.name --> CN-1 is highlighted.](./figures/04_simple_graph_with_names_and_path.svg)
+
+
+## Next up
+Now that you are familiar SPARQL, we can move on to looking at CIM and CGMES: [link](./04_cim_cgmes.md)

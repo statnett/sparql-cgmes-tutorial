@@ -125,3 +125,6 @@ What are the buses and branches of the following node-breaker models:
 We see that while the node-breaker data model doesn't change fundamentally by modifying equipment state, the bus-branch model does.
 However, the bus-branch model can change drastically by only closing a switch.
 Still, by combining the information in the EQ-profile and the SSH-profile, we can compute all data fields we need for a bus-branch model as well.
+
+## Next up
+You are now ready for the final part of this tutorial -- the EQ-profile: [link](./05_the_eq_profile.md)

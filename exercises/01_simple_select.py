@@ -2,7 +2,7 @@ import rdflib
 from pathlib import Path
 
 
-data_dir = Path(__file__).parent.with_name("data") / "dummy"
+data_dir = Path(__file__).with_name("data") / "dummy"
 
 graph = rdflib.Graph()
 graph.parse(data_dir / "first_intro.xml", publicID="EQ")
@@ -10,7 +10,7 @@ graph.parse(data_dir / "first_intro.xml", publicID="EQ")
 
 query = """
 SELECT * WHERE {
-    ?subject ?predicate ?object
+    ?subject a ?object
 }
 """
 
