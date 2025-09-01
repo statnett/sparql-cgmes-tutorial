@@ -130,7 +130,7 @@ Hopefully, you realised that there were two triples in the graph, one for each e
 
 ```raw
 [
-    ({rdfID}#_196965ea-27ad-4566-a7ee-429856557aef, cim:IdentifiedObject.name, CN-1),
+    ({rdfID}#_196965ea-27ad-4566-a7ee-429856557aef, cim:IdentifiedObject.name, 'CN-1'),
     ({rdfID}#_196965ea-27ad-4566-a7ee-429856557aef, cim:ConnectivityNode.ConnectivityNodeContainer, {rdfID}#_705e0aca-674d-47e6-b550-d9f6afecdb25),
 ]
 ```
