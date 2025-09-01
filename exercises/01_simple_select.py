@@ -10,7 +10,7 @@ graph.parse(data_dir / "first_intro.xml", publicID="EQ")
 
 query = """
 SELECT * WHERE {
-    ?subject a ?object
+    ?subject ?predicate ?object
 }
 """
 
