@@ -46,12 +46,13 @@ Such queries form "cartesian products", and it can be easy to accidentally creat
 SELECT * WHERE {
     ?p rdf:type cim:EnergyConsumer
 }
+```
 run the query and inspect the output. What do you think this query does?
+
 2. Open the [`exercises/data/dummy/first_intro.xml`](../exercises/data/dummy/first_intro.xml) file, do you see what the `cim:EnergyConsumer` refers to?
 2. Modify the query so it finds `cim:ConnectivityNode`-objects instead
 3. Modify the file so it queries the [`exercises/data/dummy/load_and_gen_switch.xml`](../exercises/data/dummy/load_and_gen_switch.xml) file instead. Do you see how this `rdf:type`-predicate can be useful?
 4. Modify the file again, replacing `rdf:type` with `a` (just the letter). Run the code again. Did anything change?
-```
 
 ## Reflection
 
